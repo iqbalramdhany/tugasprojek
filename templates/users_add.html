@@ -1,0 +1,47 @@
+{% include('header.html') %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 pt-5">
+
+            <h1>Add User</h1>
+            <form method="post">
+
+                {% with messages = get_flashed_messages() %}
+                 {% if messages %} 
+                    {% for message in messages %} 
+                     <div class="alert alert-success" role="alert">
+                        {{ message }}
+                      </div>
+                    {% endfor %} 
+                {% endif %}
+
+                {% endwith %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="group_id" class="form-label">Group</label>
+                    <select name="group_id" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Staf</option>
+                      </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+
+        </div>
+    </div>
+</div>
+{% include('footer.html') %}

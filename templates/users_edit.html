@@ -1,0 +1,44 @@
+
+{% include('header.html') %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 pt-5">
+
+            <h1>Edit User</h1>
+            <form method="post">
+            
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" value="{{ user.name }}">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp" value="{{ user.username}}">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" value="{{ user.password }}">
+                </div>
+                <div class="mb-3">
+                    <label for="group_id" class="form-label">Group</label>
+                    <select name="group_id" class="form-select" aria-label="Default select example" selected="{{ user.group_id }}">
+                        <option value="1">Admin</option>
+                        <option value="2">Staf</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="is_enabled" class="form-label">Enabled</label>
+                    <select name="is_enabled" class="form-select" aria-label="Default select example" selected="{{ user.is_enabled }}">
+                        <option value="1">yes</option>
+                        <option value="0">no</option>
+                      </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+
+        </div>
+    </div>
+</div>
+{% include('footer.html') %}
+
